@@ -1,0 +1,44 @@
+			Welcome To Advanced Java Module
+				  Sumit Raokhande
+
+- B.E.Electronics, KBP satara
+- M.Tech Electronics, Walchand College Sangli
+- C-Dac Wimc , Sunbeam pune
+- worked as Mobile Application developer at tivre business solution
+- worked on J2ME,Symbian,Windows Mobile,Reaserach Motion
+- Worked as Android developer at veetron 
+- Live android application prasieo,autohub,garage
+- Worked as JDE Developer of Oracle Product
+- Worked as OpenSDK developer
+- work as angular developer
+- work on google cloud & docker
+
+Git Hub Repo => Download code stuff from here 
+https://github.com/Javabykiran-Angular/161_AdvancedJava.git
+
+
+ - Daily mon to frid 
+ - time duration is 1.30 hr avg it may increase or it may decrease depends on tipic 
+ - Duration course 45hr to 50hr 
+ - All code will be given on git hub platform except images (on portal )
+ - Time session 4pm Sharp 
+ - All practical or therory doubt will be resolved by me 
+ - Daily task should be perform 
+ - don't miss any session 
+ - Pre-requiest 
+	- Core Java => Techicnally Sound In core java 
+	- Mysql has to know 
+	- basics of HTMl , CSS 
+	What i Provide 
+- JDBC Connection 
+- Servlet 
+- JSP => Introductory 
+- Spring 
+- Spring Boot => restful API 
+- Spring MVC 
+- Hibernate 
+
+- we conduct test Test 1,2 ,3 
+- Daily practise is required 
+- All questions are given & answers 
+
