@@ -1,0 +1,128 @@
+Last Lecture Agenda
+1 MySql queries
+	1  create database 161 
+	
+	Create Table 
+		create table employee(empid int primary Key auto_increment,ename varChar(20),job varChar(20));
+	insert data into table 
+		insert into employee values(1,"Sumit",'DevOps');
+		insert into employee(ename,job) values(1,"Sumit",'DevOps');
+	Update data into table 
+		update employee set ename="sumit123" job="..." where empid=1;
+	delete data into table 
+		delete from employee where empid=1
+	Fetch the data from table 
+		select * from employee;
+		select empid,ename from employee;
+	
+	
+	
+2 JDBC Drivers
+
+What is Database Driver?
+Database driver
+	- A software that enables java application to interact with database. It is simple carrier to connect your java application to data base. Where driver is act like bridge between any application to db that store the data into database.Here 4 different Types of driver 
+
+	1 Type I --- Jdbc Odbc Bridge Driver
+			JDBC -> java database connectivity (Design by sunmicrosystem)
+			odbc -> Open database connectivity (Design by windows microsoft)
+			- Here ODBC is only windows specific os it is not used for any other OS, so it is removed support in java 7, in the previous version it has support 
+			
+	2 Type II --- JDBC - Native API 		
+		
+			- Here we avoid ODBC instead of we use vendor specific driver 
+			- In this type finally removed OS dependancy.
+			- But this vendor specific driver has to be installed on all system 
+			Partially in C & Java --- Vendor specific
+		- e.g. Oracle OCI driver -- but now outdated.
+		
+	3 Type III --- JDBC network protocol driver
+		- In this type initially we installed our API on server and that server will transform your api to client machine
+		- When someone is connected to this server through the internet a small copy of API is sending to respective client machine.
+		- Basically it is indirectly installed that API in your machine through network so it is called network protocol driver.
+		- Here Type 2 API driver is running on server and whenever you give the request to server it transform that API in your machine and installed it.
+	
+		Middleware driver
+		- e.g. WebLogic RMI driver
+		
+	4 Type IV --- Jdbc thin/Universal driver
+		- It is not used any middleware driver to connect the DB
+		- It is Two step process 
+		  1st step is Java code -> type 4 and 
+		  2nd step is type 4 to database & vice versa
+	
+		Fully in Java -- Portable -- Vendor specific
+		- e.g. MySQL Connector (mysql-connector-x.y.z.jar) , Oracle thin driver (ojdbcx.jar), Driver url is 
+			Mysql => com.mysql.cj.jdbc.Driver
+			Oracle => oracle.jdbc.OracleDriver
+	 
+ 
+ - JDBC Steps:
+		1. Load & register driver class.
+			Class.ForName("com.mysql.cj.jdbc.Driver");
+			
+			static{
+			.....
+			}
+			
+			{
+				
+			}
+			
+		2. Get JDBC connection (using DriverManager).
+			jdbc:mysql://localhost:3306/emplyee, root ,root 
+		3. Create JDBC statement (SQL query).
+		4. Execute the query and collect result.
+			- SELECT ---> executeQuery() -- ResultSet (rows & cols)
+			OR
+			- Non-SELECT --> executeUpdate() -- int (affected rows).
+		5. Close all.
+		
+- JDBC objects:
+		1. Driver ---> Create socket connection with database & authenticate. Should be registered with DriverManager.Managing a set of JDBC Driver(oracle/mysql/nosql etc.) 
+		2. Connection ---> Encapsulate socket connection & used for creating statements and managing transactions.
+		3. Statement ---> Reresents SQL query. Can be DDL, DML or DQL.
+			-- PreparedStatement -- For executing parameterized queries.
+				e.g. INSERT INTO DEPT VALUES(?,?,?);			
+		4. ResultSet ---> Like a cursor in RDBMS. Used to access records/rows one by one.
+
+MySQL Driver Connection -:
+String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+String DB_URL = "jdbc:mysql://localhost:3306/emp161db";
+String DB_USER = "root";
+String DB_PASSWORD = "Sumit@123";
+
+Oracle Driver Connection -:
+String DB_DRIVER = "oracle.jdbc.OracleDriver";
+String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
+String DB_USER = "hr";
+String DB_PASSWORD = "hr";
+
+
+summary & Interview Questions
+1 How to Create Table Using mysql query?
+2 Write down the query for add data into table
+3 Which query is used to update data into table ?
+4 Explain JDBC Drivers?
+
+
+
+Today's Lecture Agenda
+1 JDBC Connectivity 
+2 What is Statement?
+	- Statement is an interface that present in java.sql.* package
+	- Its main purpose to represents SQL Statement & execute query with the database.
+	- It compiled & execute every time for each query
+	- It is used to execute different type of query like create,update,select & delete etc 
+	- It contains different methods like execute(),executeQuery(),executeUpdate().
+	- Each methods has its own functionality 
+		- execute() methods used to perform DDL oeprations like create,drop,and truncate the table & it returns only boolean value either true or false to validate table status changes.
+		- executeQuery() methods used to perform DQL oeprations like select table data & it returns ResultSet Object, with the help of ResultSet Object we can get data from database
+		- executeUpdate() methods used to perform DML oeprations like insert, delete & update & it returns a interger value. That meaning is row is upadated successfully.
+		
+
+
+summary & Interview Questions
+1 Explain the steps of JDBC connectivity?
+2 What is Statement?
+
