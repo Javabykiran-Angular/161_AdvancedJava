@@ -1,0 +1,78 @@
+Last Lecture Agenda
+1 JDBC Connectivity 
+2 What is Statement?
+	- Statement is an interface that present in java.sql.* package
+	- Its main purpose to represents SQL Statement & execute query with the database.
+	- It compiled & execute every time for each query
+	- It is used to execute different type of query like create,update,select & delete etc 
+	- It contains different methods like execute(),executeQuery(),executeUpdate().
+	- Each methods has its own functionality 
+		- execute() methods used to perform DDL oeprations like create,drop,and truncate the table & it returns only boolean value either true or false to validate table status changes.
+		- executeQuery() methods used to perform DQL oeprations like select table data & it returns ResultSet Object, with the help of ResultSet Object we can get data from database
+		- executeUpdate() methods used to perform DML oeprations like insert, delete & update & it returns a interger value. That meaning is row is upadated successfully.
+		
+		psvm(){
+		
+			Class.ForName("com.mysql.cj.jdbc.Driver");
+			
+			  Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3360/161batch","root","Sumit@123");
+			  
+			  Statement stmt=con.createStaement();
+			  
+			  int status=stmt.executeUpdate("insert into employee values(...)");
+			  
+			  .....
+			  
+			  ResultSet rst= stmt.executeQuery("")
+			  
+			  while(rst.next()){
+				String strfname= rst.getString("fname")
+				syso
+			  }
+			  
+			  
+			  
+			
+		}
+		
+
+
+summary & Interview Questions
+1 Explain the steps of JDBC connectivity?
+2 What is Statement?
+
+Today's Lecture Agenda
+1 Prepared Statement
+Ans - 
+	- PreparedStatement is an interface that present in java.sql.* package
+	- PreparedStatement is a subclass of Statement, it can do what a Statement can do, plus more
+	- PreparedStatement Object represents a precompiled SQL statement. Means When PreparedStatement is created, the SQL query is passed as a parameter. This Prepared Statement contains a pre-compiled SQL query, so you can be be used to execute the statement multiple times.
+	- we use prepareStatement() method of the Connection interface. This method accepts a query (parameterized) and returns a PreparedStatement object.so it works both static and dynamic queries.
+	- If we use dynamic queries for prepareStatement() method then we can set parameter value by setter method of PreparedStatement.
+	- PreparedStatement is best choice because it escapes the special characters  from query and avoid SQL injection attacks.
+
+2 Difference Between Statement & Prepared Statement?
+Ans - 
+Statement
+	1 At the time of creating statement object, we are not required to provide any query, so that means Statement Object is not associated with any query & we can use multiple queries
+	2 Whenever we are using execute method every time Query will be compile & execute.
+	3 Statement object can work for only static queries.
+	4 Relatively performance is low.
+	5 Best choice to use Statement if we want to work with multiple queries.
+	6 There may be a possibilty of SQL injection attack.
+	7 Inserting date and large object (clob & blob) is difficult.
+	
+PreparedStatement
+		1 At the time of creating PreparedStatement object, we are to required to provide SQl query. So It is associated with only one query.
+		2 It compiled only onces while getting Object of PreparedStatement.
+		3 Whenever we are using execute method query never compiled. it just will be executed
+		4 PreparedStatement object can work both static and dynamic queries.
+		5 Relatively performance is high.
+		6 Best choice to use PreparedStatement if we want to work with only one query but required to execute multiple times.
+		7 There is no possibilty of SQL injection attack.
+		8 Inserting date and large object (clob & blob) is easy.
+
+
+summary & Interview Questions
+1 What is prepared Statement
+2 Difference Between Statement & Prepared Statement?
