@@ -1,0 +1,133 @@
+Last Lecture Agenda
+1 Modular Approach
+2 Implementation of Dao
+Class Employee{
+	int id;
+	String fname;
+	String lname;
+	String mobileno;
+	
+	//setter & getter
+	// to string
+	// constructor
+		
+}
+
+Class EmployeeDao{
+	
+	final String Driver_Name="...";
+	final String Driver_Url="..."
+	...
+	
+	Connection con;
+	PreparedStatement pst;
+	ResultSet rst;
+	
+	
+	//Setp1&2 
+	public void openDb(){
+	try{
+		Class.forName(Driver_Name);
+		
+		con= Drivermanger.getConnection(...);
+		}catch(Exception e){
+		..
+		}
+		
+		
+	}
+	
+		public int insertData(Employee emp){
+			String query=".....";
+			int status=0;
+			
+			try{
+				openDb();
+				pst=con.prepareStatement(query);
+				
+				pst.setString(1,emp.getfname());
+				....
+				
+				status= pst.executeUpdate();
+				closeDb();
+			
+			}catch(Exception e){
+			...
+			}
+			
+			return status;
+			
+		}
+		
+		public List<Employee> getAllRecords(){
+				String query="...";
+				Employee e;
+				List<Employee> list=ArrayList<Employee>();
+				try{
+					openDb();
+					pst=con.prepareStatement(query);
+					
+					 rst=pst.executeQuery();
+					 
+					 while(rst.next()){
+						e=new Employee();
+						
+						e.setId(rst.getint("id"));
+						e.setfname(rst.getString("fname"));
+						...
+						list.add(e);
+						
+						
+					 }
+				closeDb();
+					
+				}catch(){
+				
+				}
+				
+				return list;
+		}
+	
+	
+	
+		//Setp5
+			public void closeDb(){
+				if(con!=null){
+					con.close();
+					con=null;
+				}
+				
+				if(pst!=null){
+					pst.close()
+					pst=null;
+				}
+				if(rst!=null){
+					rst.close();
+					rst=null;
+				}
+			}
+	
+}
+
+psvm(){
+	
+	Employee emp=new Employee(....);
+	EmployeeDao dao=new EmployeeDao();
+	
+	int status= dao.insertData(emp);
+	
+	...
+	
+	
+}
+
+
+summary & Interview Questions
+1 Explain Modular Approach
+2 How to Implementation of Dao 
+
+Today's Lecture Agenda
+1 Task Checking
+
+summary & Interview Questions
+Not Allowed for this session
