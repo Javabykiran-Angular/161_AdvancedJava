@@ -1,0 +1,33 @@
+Last Lecture Agenda
+1 What is Servlet?
+	- It is server side technology 
+	- It is used to handle client(browser) side request to process the request and generate dynamic response
+	
+2 Servlet Life Cycle?
+	1 init => only once it is invoked 
+	2 service => doget => It invokes many more time 
+	3 destroy => it invoked only once 
+	
+	localhost:8080/Demoservlet1/DemoServlet?id=9&username=sumit
+	
+3 How to get Data from parameter?
+4 How to create servlet project?
+
+
+summary & Interview Questions
+1 What is Servlet?
+2 Explain Servlet Life Cycle?
+3 How to get Data from parameter?
+4 How to create servlet project?
+
+Today's Lecture Agenda
+1 Servlet & Dao Connection
+2 get data from Html 
+
+summary & Interview Questions
+1 How to connect database & servlet ?
+2 How to receive data from html file?
+
+
+
+
