@@ -1,0 +1,53 @@
+Last Lecture Agenda
+1 Send Response of Html format
+	
+		PrintWriter pw= response.getWriter();
+		response.setContentType("text/html");
+		pw.print("<html><head><title>..</head><body>");
+		pw.print("<h2> .... </h2>");
+		pw.print("</body></html>");
+		
+	
+
+2 Servlet collabration
+
+- Call from one servlet to another servlet is called servlet collabration. We can add another HTML file (i.e. call from one servlet to another html file). To perform servlet collabration task we have to required an object of request Dispatcher. Request disppachter object we can obtained from HttpServletRequest 
+
+3 Request Dispatcher
+
+It is Interface 
+
+- It has 2 methods 
+	- forward(request,response)
+	- include(request,response)
+- In This case URL is not Change
+
+Limitation of RD-
+  -When we forward the request it does not get destroyed, while submitting some sensitive information it creates a problem of data redundancy (i.e. repetation) so we must avoid  use of request disppachter. To overcome this problem send redirect method comes into the pictures. This method is directly called using an object of HttpServletResponse
+response.sendRedirect("url");  
+
+4 Forward
+5 include
+6 Session Management 
+	HttpSession session= request.getSession();
+		session.setAttribute("name",stude.getfname());
+		
+		welcomeservlet
+		HttpSession session= request.getSession();
+			String username= (String) session.getAttribute("name");
+
+summary & Interview Questions
+1 Explain Servlet Collabration
+2 Explain Forward & include method
+3 Explain Request Dispatcher
+
+Today's Lecture Agenda
+1 Task Perform
+
+summary & Interview Questions
+NA
+
+
+
+
+
