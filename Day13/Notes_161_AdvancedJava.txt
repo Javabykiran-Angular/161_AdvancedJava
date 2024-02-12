@@ -1,0 +1,150 @@
+Last Lecture Agenda
+1 Jsp Introduction
+
+JSP (Java Server Page)
+- JSP are out-dated -- still used in old applications.
+	- JSP only Support 3 methods
+		1 GET 2 POST 3 HEAD
+	- JSP = Presentation Logic* + Business Logic
+	- JSP is front-end technology i.e. web ui.
+* JSP is converted into the servlet during execution.
+	- JSP page -- .jsp
+	- It Contain HTML tags + JSP tags + Custom tags + Java code
+	* Writing/Embedding Java code in JSP pages is "worst" practice.
+	* Best practice is to use "Java Beans" with JSP pages for BL. 	
+	
+2 JSP Tags
+	JSP Syntax:
+    - Contains markup: HTML tags, JSP tags, Custom tags.
+	- Server side code (Java) -- will be executed on server -- not sent to client.
+	-  some basic tags as follow
+	  a. Directive: Defines behaviour of JSP (generated servlet).
+		- It define structure of page
+		
+			- <%@ page ... %> - Page Directive			
+			   - In page directive you can use various attribute to give more info about the page like
+			     1 language="java"
+				 2 contentType="text/html"
+				 3 import="packagename.classname" here you can import one or more package at a time only use comma seperatated
+				 4 isErrorPage="true"
+				 
+			- <%@ include ... %>			
+			   1 If we have to add some static content in our page we use include directive
+			   2 Basically we add an HTML content because it is static
+			   3 Generally we use Header,footer, nav bar or any Other universal content etc.
+			   
+			- <%@ taglib ... %>
+			   1 Declares a tag library, containing custom actions, used in the page
+			  
+		b. Declaration: 
+		    - Java code (fields/methods) to be added in generated servlet.
+			-  you will most often find declaration tags working in combination with expression or scriptlet tags
+			- It is used generally declare variable & methods(Signature + Defination)
+			- Syntax  <%! int a=10;
+					public void test(){
+					......
+					}
+				
+			%>
+			- In declaration tag after every statement we required to use ';'
+		c. Scriptlet: 
+			- Java code to be executed per request i.e. to be added in service() method.
+			- If variable declare its scope in jsp service method
+			- To write a Business logic/Call BL
+			- Syntax <% a++; %>
+			- In scriptlet tag after every statement we required to use ';'
+		d. Expression
+			- Java expression (that evaluates to some value) whose result is added in generated response (writer).
+			- To excute an expression or to simply print actual value.
+			- Syntax  <%=a  %>
+			- In expression tag don't use ';'
+		e. Comment
+			- Server side comment, which is discarded during processing and not visible to client.
+			- If you want use jsp comment you can use it.
+			- <%-- ... --%>
+			
+
+3 Implicit Object
+  JSP Implicit objects:
+	- Local variables of jspService() methods & hence directly accessible in request handling stage i.e. scriptlets & expressions.
+	- When JSP Page gets compiled it gets translated into corresponding sevlet at that time it creates few objects they are known as implicit object of JSP
+	- request: HttpServletRequest (Main)
+	- response: HttpServletResponse (Main)
+	- session: HttpSession (Main)
+	- config: ServletConfig
+	- application: ServletContext
+	- out: JspWriter (PrintWriter) (Main)
+	- page: Object (this pointer)
+	- pageContext: PageContext (state management in JSP) - This encapsulates use of server-specific features like higher performance JspWriters.
+	- exception: Throwable -- only for custom error pages - JSP.
+		<%@ page isErrorPage="true" %> (Main)
+
+
+
+summary & Interview Questions
+1 What is JSP 
+2 Explain JSP tags
+3 How to use tags 
+
+Today's Lecture Agenda
+1 Introduction of Hibernate
+  - Hibernate is a freamwork.
+  - It is Java ORM Freamwork
+  - ORM is Object Relation Mapping
+  O => Object - It is your pojo class Object or Entity class Object
+  R => Relational => The word relational is refere to database, so in your application database may be h2,oracle, Mysql, postgreSQl
+  Mapping => Map your Object to DB directly
+  - ORM => It is techquie or solution is going to interact to database with the help of mapping. We write a code that object is stored inside the database or you can load that data from database into the object.
+  - ORM which create a bridge for communication for your  application(java/ python/.net) with relational database so it is called ORM.
+  - In the market many more ORM Freamwork is present hibernate, Mybatis, TopLink,EclipseLink
+  
+2 What is JPA?
+
+	- ORM which create a bridge for communication for your  application(java/ python/.net) with relational database so it is called ORM.
+	- In the market there are many more ORM for java Application like Hibernate, TopLink, MyBatis and EclipseLink. This are top ORM providers.
+	- Each ORM has its own api Method to interact with database to store or get the data from database.
+	- To access any ORM in your application we required its individual jar to add in our project, then we can use its own method to interact with DB.
+	- After some time i want to use any other ORM in my application then for that i have to remove hibernate ORM and add different other orm to access a data from DB then in that case we have to use a particular ORM jar files into our project and use its own different method. So in that case again we have do some extra efforts to write down the code for this particular ORM.
+	- Again we have write code for other ORM freamwork, it is very difficult for developer as well as other team to manage the jars 
+	- To avoid all this things JPA comes into the Picture i.e called Java Persistence API.
+	- JPA is define a set of rules or specifications for ORM freamwork in java.
+	- JPA is Iterface has some method that we can use with help of any ORM impelmentation like save ,update method.
+	- JPA is Standard to maintain for all ORM so it is called specifications
+
+3 Explain The difference between hibernate & JDBC 
+
+	 Hibernate 
+    1 It is java based ORM freamwork.
+	2 Hibernate can map your entity class object data directly to database with the help of predfined annotations.
+	3 Hibernate manage all exceptions itself.
+	4 Hibernate uses HQL(Hibernate query Language) similiar to sql to provide additiional features of OOPS concept like inheritance, association and many more. 
+	5 In the hibernate you can manage all type of association like one to one mapping 	, one to many , many to one and many to many can perform ease way with the help of annotations.
+	6 Hibernate provide good support for lazy loading.
+	7 All transaction management is handled by hibernate automatically.
+	8 It has to wait for more time to get solution for any issue i.e. good support service is not available. 
+	9 Hibernate provide two level caching mechanism like L1 cache & L2 cache.
+	
+   JDBC
+	1 It is database connectivity tool.
+	2 In JDBC can not map entity class object data directly to database, for that we have to write some piece code.
+	3 JDBC needs  to write try catch block to manage all exceptions.
+	4 JDBC can create a queries & update the data relational database using the structured query Language.
+	5 JDBC is difficult to manage association mapping like one to one ,many to one & so on .
+	6 JDBC does not support for lazy loading.
+	7 In JDBC All transaction management is managed by iteself when working with JDBC code.
+	8 JDBC has strong community get solution for any issue i.e. good support service available.
+	9 JDBC need to write a code for implementing caching.
+	
+	
+	
+	
+
+
+summary & Interview Questions
+1 What is Hibernate?
+2 What is JPA?
+3 Explain The difference between hibernate & JDBC 
+
+
+
+
