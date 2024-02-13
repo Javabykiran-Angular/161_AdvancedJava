@@ -1,0 +1,67 @@
+Last Lecture Agenda
+1 Introduction of Hibernate
+  - Hibernate is a freamwork.
+  - It is Java ORM Freamwork
+  - ORM is Object Relation Mapping
+  O => Object - It is your pojo class Object or Entity class Object
+  R => Relational => The word relational is refere to database, so in your application database may be h2,oracle, Mysql, postgreSQl
+  Mapping => Map your Object to DB directly
+  - ORM => It is techquie or solution is going to interact to database with the help of mapping. We write a code that object is stored inside the database or you can load that data from database into the object.
+  - ORM which create a bridge for communication for your  application(java/ python/.net) with relational database so it is called ORM.
+  - In the market many more ORM Freamwork is present hibernate, Mybatis, TopLink,EclipseLink
+  
+2 What is JPA?
+
+	- ORM which create a bridge for communication for your  application(java/ python/.net) with relational database so it is called ORM.
+	- In the market there are many more ORM for java Application like Hibernate, TopLink, MyBatis and EclipseLink. This are top ORM providers.
+	- Each ORM has its own api Method to interact with database to store or get the data from database.
+	- To access any ORM in your application we required its individual jar to add in our project, then we can use its own method to interact with DB.
+	- After some time i want to use any other ORM in my application then for that i have to remove hibernate ORM and add different other orm to access a data from DB then in that case we have to use a particular ORM jar files into our project and use its own different method. So in that case again we have do some extra efforts to write down the code for this particular ORM.
+	- Again we have write code for other ORM freamwork, it is very difficult for developer as well as other team to manage the jars 
+	- To avoid all this things JPA comes into the Picture i.e called Java Persistence API.
+	- JPA is define a set of rules or specifications for ORM freamwork in java.
+	- JPA is Iterface has some method that we can use with help of any ORM impelmentation like save ,update method.
+	- JPA is Standard to maintain for all ORM so it is called specifications
+
+3 Explain The difference between hibernate & JDBC 
+
+	 Hibernate 
+    1 It is java based ORM freamwork.
+	2 Hibernate can map your entity class object data directly to database with the help of predfined annotations.
+	3 Hibernate manage all exceptions itself.
+	4 Hibernate uses HQL(Hibernate query Language) similiar to sql to provide additiional features of OOPS concept like inheritance, association and many more. 
+	5 In the hibernate you can manage all type of association like one to one mapping 	, one to many , many to one and many to many can perform ease way with the help of annotations.
+	6 Hibernate provide good support for lazy loading.
+	7 All transaction management is handled by hibernate automatically.
+	8 It has to wait for more time to get solution for any issue i.e. good support service is not available. 
+	9 Hibernate provide two level caching mechanism like L1 cache & L2 cache.
+	
+   JDBC
+	1 It is database connectivity tool.
+	2 In JDBC can not map entity class object data directly to database, for that we have to write some piece code.
+	3 JDBC needs  to write try catch block to manage all exceptions.
+	4 JDBC can create a queries & update the data relational database using the structured query Language.
+	5 JDBC is difficult to manage association mapping like one to one ,many to one & so on .
+	6 JDBC does not support for lazy loading.
+	7 In JDBC All transaction management is managed by iteself when working with JDBC code.
+	8 JDBC has strong community get solution for any issue i.e. good support service available.
+	9 JDBC need to write a code for implementing caching.
+	
+summary & Interview Questions
+1 What is Hibernate?
+2 What is JPA?
+3 Explain The difference between hibernate & JDBC 
+
+
+
+Today's Lecture Agenda
+1 Integration Of Hibernate 
+2 Insert data into Hibernate
+
+summary & Interview Questions
+1 How to Integrate Hibernate in eclipse
+2 Which method is used to insert data into database?
+
+
+
+
