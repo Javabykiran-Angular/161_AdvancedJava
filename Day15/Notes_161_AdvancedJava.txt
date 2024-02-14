@@ -1,0 +1,68 @@
+Last Lecture Agenda
+1 Integration Of Hibernate 
+	
+	@Entity
+	@Table(name="song")
+	class Song{
+		@Id
+		@Colum(name="songid")
+		@GeneratedValue(startgey=GenereationType.Identity)
+		int id;
+		String name;
+		@Colum(name="singer")
+		String artist;
+		....
+		
+	}
+	
+	hibernate.cfg.xml
+	<hibernateconfiguration>
+		<session-factory>
+			<property ...
+	
+	
+	Demo1.java{
+		psvm(){
+			
+			Configuration config=new Configuration();
+			config.configure("...");
+			config.annotatedClass(Song.class);
+			
+			SessionFactory factory= config.buildSessionFactory();
+			
+			Session session= factory.openSession();
+			
+			Song s=new Song();
+			....
+			
+			session.beginTranscation();
+			
+			session.persist(s);
+			session.getTransction().commit();			
+			
+			
+		}
+	}
+	
+	
+2 Insert data into Hibernate
+
+summary & Interview Questions
+1 How to Integrate Hibernate in eclipse
+2 Which method is used to insert data into database?
+
+Today's Lecture Agenda
+1 Hibernate Operation 
+2 Update
+3 delete
+4 GetParticular data
+5 get All Records
+
+summary & Interview Questions
+1 How to update a record in hibernate
+2 How to delete a record in hibernate
+3 How to GetParticular record in hibernate
+
+
+
+
