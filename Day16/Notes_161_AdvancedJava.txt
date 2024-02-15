@@ -1,0 +1,50 @@
+Last Lecture Agenda
+1 Hibernate Operation 
+2 Update
+	
+		Configuration config=new Configuration();
+		config.configure("..");
+			config.addAnnotatedClass("...");
+			SessionFactory factory= config.buildSessionFactory();
+			
+			Session session= factory.openSession();
+			
+			int id=2;
+			
+			
+			session.beginTransction();
+			
+			Song s=(Song) session.get(Song.class,id);
+			
+			s.setArtist("...");
+			
+			session.merge(s);
+			session.getTransction().commit();
+			session.close();
+			
+	
+3 delete
+4 GetParticular data
+5 get All Records
+
+
+summary & Interview Questions
+1 How to update a record in hibernate
+2 How to delete a record in hibernate
+3 How to GetParticular record in hibernate
+
+Today's Lecture Agenda
+1 HQL Lang.
+	- Hibernate Query Lang 
+	
+2 GetParticular Records
+3 getAllRecord  
+
+summary & Interview Questions
+1 What is HQL Lang?
+2 Explain Curd Operation in HQL 
+
+
+
+
+
