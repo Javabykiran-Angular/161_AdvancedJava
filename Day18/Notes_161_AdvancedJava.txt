@@ -1,0 +1,29 @@
+Last Lecture Agenda
+1 Update Record Using HQL 
+2 Delete Record Using HQL
+
+update from sing set name=? where id=?
+
+delete from song where id=?
+
+summary & Interview Questions
+1 How to Update Multiple column using HQL 
+2 How to delete record using HQL 
+
+Today's Lecture Agenda
+1 Hibernate Mapping
+2 One to one mapping
+3 Many to one Mapping
+
+
+summary & Interview Questions
+1 Explain One to one mapping?
+2 Explain Many to one Mapping?
+
+
+
+
+
+
+
+
