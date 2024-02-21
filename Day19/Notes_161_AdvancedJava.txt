@@ -1,0 +1,27 @@
+Last Lecture Agenda
+1 Hibernate Mapping
+2 One to one mapping
+
+3 Many to one Mapping
+
+
+summary & Interview Questions
+1 Explain One to one mapping?
+2 Explain Many to one Mapping?
+
+Today's Lecture Agenda
+1 one To Many mapping
+2 get records
+
+summary & Interview Questions
+1 Explain one To Many mapping?
+
+
+
+
+
+
+
+
+
+
