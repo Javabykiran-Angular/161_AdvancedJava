@@ -1,0 +1,197 @@
+Last Lecture Agenda
+1 What is Database Driver?
+	Database driver
+	- A software that enables java application to interact with database. It is simple carrier to connect your java application to data base. Where driver is act like bridge between any application to db that store the data into database.Here 4 different Types of driver 
+
+	1 Type I --- Jdbc Odbc Bridge Driver
+			JDBC -> java database connectivity (Design by sunmicrosystem)
+			odbc -> Open database connectivity (Design by windows microsoft)
+			- Here ODBC is only windows specific os it is not used for any other OS, so it is removed support in java 7, in the previous version it has support 
+			
+	2 Type II --- JDBC - Native API 		
+		
+			- Here we avoid ODBC instead of we use vendor specific driver 
+			- In this type finally removed OS dependancy.
+			- But this vendor specific driver has to be installed on all system 
+			Partially in C & Java --- Vendor specific
+		- e.g. Oracle OCI driver -- but now outdated.
+		
+	3 Type III --- JDBC network protocol driver
+		- In this type initially we installed our API on server and that server will transform your api to client machine
+		- When someone is connected to this server through the internet a small copy of API is sending to respective client machine.
+		- Basically it is indirectly installed that API in your machine through network so it is called network protocol driver.
+		- Here Type 2 API driver is running on server and whenever you give the request to server it transform that API in your machine and installed it.
+	
+		Middleware driver
+		- e.g. WebLogic RMI driver
+		
+	4 Type IV --- Jdbc thin/Universal driver
+		- It is not used any middleware driver to connect the DB
+		- It is Two step process 
+		  1st step is Java code -> type 4 and 
+		  2nd step is type 4 to database & vice versa
+	
+		Fully in Java -- Portable -- Vendor specific
+		- e.g. MySQL Connector (mysql-connector-x.y.z.jar) , Oracle thin driver (ojdbcx.jar), Driver url is 
+			Mysql => com.mysql.cj.jdbc.Driver
+			Oracle => oracle.jdbc.OracleDriver
+
+2 Explain JDBC Steps?/ Explain JDBC Connectivity?
+
+	1. Load & register driver class.
+			Class.ForName("com.mysql.cj.jdbc.Driver");
+			
+			static{
+			.....
+			}
+			
+			{
+				
+			}
+			
+		2. Get JDBC connection (using DriverManager).
+			jdbc:mysql://localhost:3306/emplyee, root ,root 
+		3. Create JDBC statement (SQL query).
+		4. Execute the query and collect result.
+			- SELECT ---> executeQuery() -- ResultSet (rows & cols)
+			OR
+			- Non-SELECT --> executeUpdate() -- int (affected rows).
+		5. Close all.
+3 what is prerequisite for MySQL Driver Connection
+	1 Driver Name 
+		String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+	2 Database url 
+		String DB_URL = "jdbc:mysql://localhost:3306/emp161db";
+	3 Database user
+		String DB_USER = "root";
+	4 Database password
+		String DB_PASSWORD = "Sumit@123";
+4 What is Statement?
+	- Statement is an interface that present in java.sql.* package
+	- Its main purpose to represents SQL Statement & execute query with the database.
+	- It compiled & execute every time for each query
+	- It is used to execute different type of query like create,update,select & delete etc 
+	- It contains different methods like execute(),executeQuery(),executeUpdate().
+	- Each methods has its own functionality 
+		- execute() methods used to perform DDL oeprations like create,drop,and truncate the table & it returns only boolean value either true or false to validate table status changes.
+		- executeQuery() methods used to perform DQL oeprations like select table data & it returns ResultSet Object, with the help of ResultSet Object we can get data from database
+		- executeUpdate() methods used to perform DML oeprations like insert, delete & update & it returns a interger value. That meaning is row is upadated successfully.
+5 What is Prepared Statement?
+	- PreparedStatement is an interface that present in java.sql.* package
+	- PreparedStatement is a subclass of Statement, it can do what a Statement can do, plus more
+	- PreparedStatement Object represents a precompiled SQL statement. Means When PreparedStatement is created, the SQL query is passed as a parameter. This Prepared Statement contains a pre-compiled SQL query, so you can be be used to execute the statement multiple times.
+	- we use prepareStatement() method of the Connection interface. This method accepts a query (parameterized) and returns a PreparedStatement object.so it works both static and dynamic queries.
+	- If we use dynamic queries for prepareStatement() method then we can set parameter value by setter method of PreparedStatement.
+	- PreparedStatement is best choice because it escapes the special characters  from query and avoid SQL injection attacks.
+6 Difference Between Statement & Prepared Statement?
+	Statement
+	1 At the time of creating statement object, we are not required to provide any query, so that means Statement Object is not associated with any query & we can use multiple queries
+	2 Whenever we are using execute method every time Query will be compile & execute.
+	3 Statement object can work for only static queries.
+	4 Relatively performance is low.
+	5 Best choice to use Statement if we want to work with multiple queries.
+	6 There may be a possibilty of SQL injection attack.
+	7 Inserting date and large object (clob & blob) is difficult.
+	
+PreparedStatement
+		1 At the time of creating PreparedStatement object, we are to required to provide SQl query. So It is associated with only one query.
+		2 It compiled only onces while getting Object of PreparedStatement.
+		3 Whenever we are using execute method query never compiled. it just will be executed
+		4 PreparedStatement object can work both static and dynamic queries.
+		5 Relatively performance is high.
+		6 Best choice to use PreparedStatement if we want to work with only one query but required to execute multiple times.
+		7 There is no/less possibilty of SQL injection attack.
+		8 Inserting date and large object (clob & blob) is easy.
+
+	
+7 Explain Types of Application?
+	
+	Stand alone Application
+		1 GUI Based Application/Desktop
+			e.g Calculator
+		2 CUI Based Application-(Character User Interface Based)
+		 e.g All core java Application which are running from Command prompt is a CUI Based
+		Also Called Console Application
+
+		Web Application
+		e.g www.google.com
+		java enterprise application- Bank Application,Telecom Application
+		means it support atm,smart device, It is combination of all things(Multiple services) like Bank Application
+	
+8 What is Server?
+	
+	1 H/w Server- physical Machine(It has one or more S/W server run with differentiate using port)
+	2 S/W Server
+    - Web Server- IIS (Microsoft),Glassfish (sun Microsystem),Tomcat server(Apache), Jetty
+			
+    - Application Server- mysql, Angular server,Oracle server weblogic,Jboss (Red Hat),IBM WebSphere
+	- one port has one application only 
+
+	
+9 Explain Http Methods?
+- Http is protocal 
+- It get the http request & http Respose
+
+	1 get method => it fetch a data from backend server 
+	2 post => it sends a data from front end server to backend server 
+	3 put => It is used to update a particular record 
+	4 delete => It is used to delete a particular record 
+	
+10 Explain Server-client Application Flow?/ Can you explain complete flow of on scenario where student will get added into database from jsp/frontend ?
+
+
+Today's Lecture Agenda
+1 What is Maven?
+	- Maven is Project Management tool 
+	- It is project Management Tool
+		- It is Build Tool
+		- add required jars & their dependencies in project classpath & deployment assembly
+		- compilation of the project.
+		- testing & packaing project deployment assembly.
+		- Reporting
+	- Meaning of Maven is "Accumulator of knowledge". 
+		-Maven is in yiddish language word.
+		
+	- Maven is automation & management tool developed by Apache s/w foundation. It is based on POM (project Object Model)=> config of project
+		- basic Config : java version, spring version,maven version etc...
+		- dependencies: third party jar files to be added in project.
+		- packaging info: jar or war, name, groupId/artifactId
+		- build settings.
+		- repositories: collection of jars.
+		
+	- Maven can build project into desired output such as .jar, .war etc
+	- It is mostly used for java based project.
+	- Maven is written in java.
+	- Life cycles:
+		- build --> build the project with multiple phases.
+			- validate/Generate Resourse: project validation & download dependencies.
+			- compile: compile project (.class).
+			- test: runs all unit test cases.
+			- package: create .jar or .war file.
+			- install: install jar in local repo.
+			- deploy: install jar in remote repo.
+		
+		- clean --> clean the project (delete generated files .class, ...)
+2 How Maven Works 
+
+		
+Java Project Structure
+	- Source code
+	- Test code
+	- resource (assets,files,directories)
+	- dependances/Library
+	- Configuration
+	- Task Runner (build,test,Run)
+	- Reporting
+	
+
+summary & Interview Questions
+1 What is Maven 
+2 Explain How Maven Works 
+
+
+
+
+
+
+
