@@ -1,0 +1,81 @@
+Last Lecture Agenda
+1 What is Spring?
+framework-
+  1 framework is a set of API(It's predefined classes & interface) which works predefined algorithms & targetated to specific domain
+  2 to develop the application in the systematic format with the help of framework
+  e.g in photo studio shop 
+  3 Spring is framework of framework i.e combination of framework (means it work all functionality of core java standalone application,web application,data structure as collection framework).
+  4 It has fix Flow it already predefined e.g. bus route is fix from katraj to swarget & swarget to katraj
+
+Spring Framework:
+	- Pre-requisits: OOP concepts & coding,core java,Introductory knowlegdge of Advanced Java.
+	- Spring is light-weight comprehensive framework to Simplify Java (SE+EE) Development.
+	- Light-weight -- Framework size is small + minimal num of jars (for give req.) + Minimal overheads.
+		- Comprehensive -- Provides lot of functionality in minimal code.
+		- Simplify Java Development -- Developer can focus on business logic, Spring manage testing, integration of other libs, ...
+		- Depedency Injection
+		
+- Spring Framework:
+		- 2003 -- Rod Johnson -- sourceforge.net -- Open Source project.
+		- Spring 1.x
+		- Spring 2.x
+		- * Spring 3.x -- Annotation based config.
+		- * Spring 4.x => 4.x.x
+		- Spring 5.x
+		- Spring 6.x
+		
+- Spring Features/ Advantages 
+		- Modular -- different jars for different functionalities.
+		- Flexible -- Most of frameworks follow "All or nothing" policy -- Spring is exception
+		- Test Driven Development -- Unit testing is well integrated in Spring + Supprt for other testing.
+		- Maintainable/Extendable -- Start with interfaces & can change impl over the time.
+		- Exceptions -- Spring convert/wraps all checked exception into unchecked one.
+		- Depedency Injection
+2 Why we use Spring?
+3 What is IOC => Inversion of Control?
+What is IoC?
+
+- IoC container: (Inversion of control)
+		-It is used to create object of class,maintain life cycle of object,manage its state,  by spring. So it is called Loosely coupling, for this feature spring is more popular in market
+		 - Mainly it based on two concept DI(Dependency Injection) & IOC (Inversion of control)
+		 
+		- IoC -- Inversion of Control
+			 - It is an architectural pattern describing that programmer do not need to create an object, instead just describe how it should be created. No need to directly connect your components & services together in program, instead just describe which services are needed by which components in a configuration file/xml file. The spring IOC container is then responsible.
+			- IOC create a singleton object means that object create only ones instance & we can use that object through out the application whenever we need.
+			
+		- DI -- Dependency Injection
+			- The object initialization is done by spring -- adding dependencies into the object (i.e. initializing its properties).
+			- DI is way to achieving the IOC.i.e to implement IOC we reuired Dependency Injection
+			- Runtime object creation is not allowed
+			- It Create Object before runtime & it inject whenever we want it gives object.
+			
+			
+IOC Container Has 2 types
+
+ 1 BeanFactory
+	- It is Interface
+	- we can use some implementated classess using this interface
+ 2 ApplicationContext
+	- It is Interface
+	- we can use some implementated classess using this interface
+	- Application Context is nothing but spring container.In newer version of spring Application Context to developed enterprise application.
+	- class is used ClassPathXMLApplicationContext.
+	
+summary & Interview Questions
+1 What is Spring ?
+2 Why we use Spring?
+3 What is IOC?
+
+Today's Lecture Agenda
+1 Depedency Injection
+2 setter level Injection
+3 constructor level Injection
+
+summary & Interview Questions
+1 What is Depedency Injection
+
+
+
+
+
+
