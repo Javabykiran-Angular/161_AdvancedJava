@@ -1,0 +1,53 @@
+Last Lecture Agenda
+1 Annotation Based Configuration
+2 @Bean
+3 @Component
+4 Difference Between @Bean & @Component
+
+@Bean
+1 The @Bean annotation is used to define a bean method within a configuration class.
+2 This method returns an instance of the bean that you want to define.
+3 typically used when you want to define a bean for a class that you do not control, such as a third-party library
+4 you can create a bean instance and customize its behavior as you needed.
+5 @Bean methods can have arguments, which can be used to inject dependencies into the bean instance.
+6 @Bean Preferable for to wire components from 3rd-party libraries 
+
+
+@Component
+1 The @Component annotation is a stereotype annotation that is used to mark a class as a component.
+2 A component is a general-purpose object that is managed by the Spring IoC container.Other stereotype annotations, such as @Service, @Repository, and @Controller.
+3 typically used when you want to define a bean for a class that you create yourself and that has a simple initialization process
+4 It is provides a convenient way to register a class as a bean without having to define a separate configuration class.
+5 @Component classes typically use constructor or setter injection to inject dependencies.
+6 @Component Preferable for component scanning and automatic wiring.
+
+
+
+summary & Interview Questions
+1 How to do the Annotation Based Configuration?
+2 What is @Bean Annotation?
+3 What is @Component Annotation?
+4 Explain Difference Between @Bean & @Component
+
+
+
+Today's Lecture Agenda
+1 @Autowired
+ - To create DI 
+  - U can apply on field level, setter injection , constructor 
+2 @Value - It inject the value into variable 
+3 @Qualifier
+
+summary & Interview Questions
+1 How to use Autowired?
+2 How to inject value into property?
+3 Use of @Value 
+4 Explain Qualifier
+
+
+
+
+
+
+
+
