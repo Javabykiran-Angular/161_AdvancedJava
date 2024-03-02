@@ -1,0 +1,165 @@
+Last Lecture Agenda
+1 What is Servlet?
+	- It is server side technology 
+	- It is used to handle client(browser) side request to process the request and generate dynamic response
+	- Explain Hireahy
+	- Enterprise application 
+	
+2 Explain Servlet Life Cycle?
+	1 init => only once it is invoked 
+	2 service => doget => It invokes many more time 
+	3 destroy => it invoked only once 
+	
+3 Explain Servlet collaboration
+	Call from one servlet to another servlet is called servlet collaboration. We can add another HTML file (i.e. call from one servlet to another html file). To perform servlet collaboration task we have to required an object of request Dispatcher. Request dispatcher object we can obtained from HttpServletRequest 
+
+4 What is JSP?
+	
+	- JSP is front-end technology i.e. web ui.
+	- It is used only for Java Technology	
+	- It Contain HTML tags + JSP tags + Custom tags + Java code
+	- In jsp we can Write Presentation Logic as well as Business Logic
+	- JSP Support only 3 methods 
+		1 GET 2 POST 3 HEAD
+	- JSP is converted into the servlet during execution.
+	
+5 Explain JSP Life Cycle?
+	1 jsp_init()
+	2 jsp_Service 
+	3 jsp destroy 
+6 Which Implicit Object present in JSP? What are implicit objects of jsp
+	- That object we are directly accessing on jsp pages without creating instance explicitly by ourself that is called Implicit Object
+	- It is directly accessible in  scriptlets or expressions tag etc .
+	- - request: HttpServletRequest 
+	- response: HttpServletResponse 
+	- session: HttpSession 
+	- config: ServletConfig
+	- application: ServletContext
+	- out: JspWriter (PrintWriter) 
+	- page: Object (this pointer)
+	- pageContext: PageContext (state management in JSP) - This encapsulates use of server-specific features like higher performance JspWriters.
+	- exception: Throwable -- only for custom error pages - JSP.
+		<%@ page isErrorPage="true" %> 
+	
+	
+
+7 How many objects of a servlet is created?
+	Only one object at the time of first request by servlet or web container.
+
+8 What is difference between Get and Post method?
+Get -
+1) Limited amount of data can be sent 
+2) Not Secured because data is exposed in URL bar.
+3) we can send as well as get a data 
+4) It is not reliable for sending a data for backend 
+5) It is used to fetch a data from backend server 
+Post
+1) Large amount of data can be sent because data is sent in Http body.
+2) Secured because data is not exposed in URL bar.
+3) we can send data from frontend to backend only 
+4) It is reliable for sending a data for backend 
+5) It is used to send data from front-end
+
+	
+	
+
+9 What is Hibernate?
+
+	Hibernate is a framework.
+  - It is Java ORM Framework
+  - ORM is Object Relation Mapping
+  O => Object - It is your pojo class Object or Entity class Object
+  R => Relational => The word relational is refer to database, so in your application database may be h2,oracle, Mysql, postgreSQl
+  Mapping => Map your Object to DB directly
+  - ORM => It is techquie or solution is going to interact to database with the help of mapping. We write a code that object is stored inside the database or you can load that data from database into the object.
+  - ORM which create a bridge for communication for your  application(java/ python/.net) with relational database so it is called ORM.
+  - In the market many more ORM Framework is present hibernate, Mybatis, TopLink,EclipseLink
+
+10 What is JPA?
+
+	- ORM which create a bridge for communication for your  application(java/ python/.net) with relational database so it is called ORM.
+	- In the market there are many more ORM for java Application like Hibernate, TopLink, MyBatis and EclipseLink. This are top ORM providers.
+	- Each ORM has its own api Method to interact with database to store or get the data from database.
+	- To access any ORM in your application we required its individual jar to add in our project, then we can use its own method to interact with DB.
+	- After some time i want to use any other ORM in my application then for that i have to remove hibernate ORM and add different other orm to access a data from DB then in that case we have to use a particular ORM jar files into our project and use its own different method. So in that case again we have do some extra efforts to write down the code for this particular ORM.
+	- Again we have write code for other ORM framework, it is very difficult for developer as well as other team to manage the jars 
+	- To avoid all this things JPA comes into the Picture i.e called Java Persistence API.
+	- JPA is define a set of rules or specifications for ORM framework in java.
+	- JPA is Interface has some method that we can use with help of any ORM implementation like save ,update method.
+	- JPA is Standard to maintain for all ORM so it is called specifications.
+
+11 Explain The difference between hibernate & JDBC 
+
+Hibernate 
+    1 It is java based ORM framework.
+	2 Hibernate can map your entity class object data directly to database with the help of predefined annotations.
+	3 Hibernate manage all exceptions itself.
+	4 Hibernate uses HQL(Hibernate query Language) similar to sql to provide additional features of OOPS concept like inheritance, association and many more. 
+	5 In the hibernate you can manage all type of association like one to one mapping 	, one to many , many to one and many to many can perform ease way with the help of annotations.
+	6 Hibernate provide good support for lazy loading.
+	7 All transaction management is handled by hibernate automatically.
+	8 It has to wait for more time to get solution for any issue i.e. good support service is not available. 
+	9 Hibernate provide two level caching mechanism like L1 cache & L2 cache.
+	
+   JDBC
+	1 It is database connectivity tool.
+	2 In JDBC can not map entity class object data directly to database, for that we have to write some piece code.
+	3 JDBC needs  to write try catch block to manage all exceptions.
+	4 JDBC can create a queries & update the data relational database using the structured query Language.
+	5 JDBC is difficult to manage association mapping like one to one ,many to one & so on .
+	6 JDBC does not support for lazy loading.
+	7 In JDBC All transaction management is managed by iteself when working with JDBC code.
+	8 JDBC has strong community get solution for any issue i.e. good support service available.
+	9 JDBC need to write a code for implementing caching.
+
+	
+
+Today's Lecture Agenda
+1 Spring AOP 
+
+Spring AOP:
+	- AOP: Implementation of cross cutting concerns without modifying core BL.
+	- Pre-processing & Post-processing
+	- In JavaEE it is implemented using Filters.
+	- In Java it can be implmented using Aspect/J framework.
+	- In Spring AOP is implemented in spring-aop package/module. It is wrapper on Aspect/J library.
+	- AOP is an approach which supports OOP
+	- AOP breaking down program logic into distinct parts so it is called concerns
+	- The functions that span multiple points of an application are called cross-cutting concerns and these cross-cutting concerns are conceptually separate from the application's business logic.
+	- e.g logging, auditing, declarative transactions, security, caching, etc.
+	- AOP is like triggers in programming languages such as Perl, .NET, Java, and others.
+	- Spring AOP module provides interceptors to intercept an application. For example, when a method is executed, you can add extra functionality before or after the method execution.
+	
+	AOP Terminology
+		- Aspect 
+			An aspect is a class that implements enterprise application concerns that cut across multiple classes, such as transaction management. Aspects can be a normal class configured through Spring XML configuration or we can use Spring AspectJ integration to define a class as Aspect using @Aspect annotation. It will contain one or more advices implementations.
+		- JoinPoint
+			A join point is a specific point in the application such as method execution, exception handling, changing object variable values, etc. In Spring AOP a join point is always the execution of a method.
+			You can also say, it is the actual place in the application where an action will be taken using Spring AOP framework.
+		- Advice - (advice->What should be called)
+			Advices are actions taken for a particular join point.In terms of programming, they are methods that get executed when a certain join point with matching pointcut is reached in the application, such as filters in servlet. 
+			Advice represents an action taken by an aspect at a particular join point. There are different types of advices:
+			
+			1 @After
+				An advice that gets executed after the join point method finishes executing, whether normally or by throwing an exception, In short it work like as finally block in core java.
+			2 @Before - 
+				These advices runs before the execution of join point methods( methods you speicify)
+			3 @Arround
+				This is the most important and powerful advice. This advice surrounds the join point method and we can also choose whether to execute the join point method or not. We can write advice code that gets executed before and after the execution of the join point method.
+				Sequance- call @before->perform logic->proceed further Your joinpoint method works->@After call->perform logic->Point cut means to stop the execution of that method.
+
+2 Aspects 
+
+summary & Interview Questions
+1 What is AOP 
+2 Explain Various AOP Aspects 
+
+
+
+
+
+
+
+
+
+
