@@ -1,0 +1,138 @@
+Last Lecture Agenda
+1 Http Request & Http Response
+	Http Request => 2 Part 
+	1 Header
+		- URI
+		- ip
+		- method => get/post/put/delete
+		- ContentType
+			- image 
+			- Audio
+			- text 
+			- Video
+			- Json 
+			- PDF
+		- Date time 
+		- Auth token 
+	2 Body 
+		Data 
+			1 Json 
+			2 text 
+			
+Http Response => 2 Part 
+	1 Header
+		- URI
+		- ip
+		- method => get/post/put/delete
+		- ContentType
+			- image 
+			- Audio
+			- text 
+			- Video
+			- Json 
+			- PDF
+		- Date time 
+		- Auth token 
+		- Status code 
+			1 2xx => success/ok 200-299
+			2 3xx => Redirection => 300-399
+			3 4xx=> cilent side error => 400-499
+			4 5xx=> Server side error => 500-599
+	2 Body 
+		Data 
+			1 Json 
+			2 text 
+		
+2 Rest Vs Soap
++ REST 
+	- Typically REST works on top of HTTP protocol
+	- Can be accessed from any device which has internet connection.
+	- REST is lightweight (than SOAP)
+		- gives freedom -- XML or JSON -- JSON is preferred.
+		- JSON processing is lighter.
+		- JSON needs less data
+
++ SOAP 
+	- SOAP services gives XML data 
+	- Can be accessed & processing XML data needs more device config.
+		- XML processing is heavy
+		- XML needs more data
+
+3 Json Object
+	Java script Object Notation 
+	- It store data into key & value Format
+	
+	{
+		"id":"9",
+		"fname":"Sumit",
+		"lname":"...."
+	}
+	
+class Employee{
+	int id;
+	String fname;
+	String lname;
+	Date date;
+}
+
+{
+	"id":9,
+	"fname":"gfgf",
+	"lname":"",
+	"date":"...."
+	
+}
+	
+	
+	
+4 Array Of Object
+	
+	[
+		{
+			"id":"9",
+			"fname":"Sumit",
+			"lname":"...."
+		},
+		{
+			"id":"10",
+			"fname":"Sumit",
+			"lname":"...."
+		},
+		{
+			"id":"6",
+			"fname":"Sumit",
+			"lname":"...."
+		}
+	]
+	
+	
+5 Spring Boot Application
+
+summary & Interview Questions
+1 Explain Http Request & Http Response
+2 Difference between Rest & Soap
+3 How to create Json Object
+4 How to create array of object
+
+
+Today's Lecture Agenda
+1 Request Mapping 
+2 GetMapping
+3 PostMapping
+4 put Mapping
+5 delete mapping
+6 Path Variable
+7 Request Param
+
+summary & Interview Questions
+1 Which parameter is used in request mapping
+2 What is runner main class in spring boot what annotation you use in it?
+
+
+
+
+
+
+
+
+
