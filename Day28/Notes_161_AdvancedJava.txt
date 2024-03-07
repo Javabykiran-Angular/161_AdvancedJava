@@ -1,0 +1,27 @@
+Last Lecture Agenda
+1 Request Mapping 
+2 GetMapping
+3 PostMapping
+4 put Mapping
+5 delete mapping
+6 Path Variable
+7 Request Param
+
+summary & Interview Questions
+1 Which parameter is used in request mapping
+2 What is runner main class in spring boot what annotation you use in it?
+
+
+
+Today's Lecture Agenda
+1 Spring Boot With database
+
+summary & Interview Questions
+1 Explain the Steps to store data into database
+2 Where to set database configuration in spring boot 
+
+
+
+
+
+
