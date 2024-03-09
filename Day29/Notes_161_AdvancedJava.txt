@@ -1,0 +1,15 @@
+Last Lecture Agenda
+1  Spring Boot With database
+
+summary & Interview Questions
+1 Explain the Steps to store data into database
+2 Where to set database configuration in spring boot 
+
+Today's Lecture Agenda
+1 Industry Curd Operations
+
+summary & Interview Questions
+1 How to do curd operations in spring boot 
+
+
+
