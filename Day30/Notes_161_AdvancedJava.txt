@@ -1,0 +1,30 @@
+Last Lecture Agenda
+1  Industry Curd Operations
+summary & Interview Questions
+1 How to do curd operations in spring boot  
+
+
+Today's Lecture Agenda
+1 Spring Project as per Industry
+2 organisation Management System
+
+{
+        
+        "country": {
+         "cid": 3        
+        },
+        "name": "Sumit",
+        "phoneno": "789456123",
+        "department": "Developer",
+        "status": "Active",
+        "createddtm": "2024-11-30T18:30:00.000+00:00",
+        "createdby": "Sumit",
+        "updateddtm": "2024-11-30T18:30:00.000+00:00",
+        "updatedby": "sumit"
+    }
+
+summary & Interview Questions
+1 Which standard we have to follow while industry coding?
+
+
+
